@@ -6,6 +6,7 @@ const app = express();
 const cors = require('cors')
 
 const port=3000;
+const allowedOrigin = 'http://localhost:8080';
 
 const pool = new pg.Pool({
     user: 'secadv',
