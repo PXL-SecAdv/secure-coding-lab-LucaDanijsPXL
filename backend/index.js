@@ -9,13 +9,13 @@ const port=3000;
 const allowedOrigin = 'http://localhost:8080';
 
 const pool = new pg.Pool({
-    user: 'secadv',
-    host: 'db',
-    database: 'pxldb',
-    password: 'ilovesecurity',
-    port: 5432,
+    user: process.env.POSTGRES_USER,
+    host: process.env.POSTGRES_HOST,
+    database: process.env.PGDATABASE,
+    password: process.env.POSTGRES_PASSWORD,
+    port: process.env.POSTGRES_PORT || 5432,
     connectionTimeoutMillis: 5000
-})
+});
 
 console.log("Connecting...:")
 
